@@ -176,7 +176,9 @@
             tree.snapshot("p2", 500, 0, 610, 680);
 
             //canvas.parent().css("background", "url(" + tree.toDataURL("Assets/img3.jpg") + ")");
-	canvas.parent().css("background-image", "url(" + canvas[0].toDataURL("Assets/img3.jpg") + ")");
+	var dataURL = canvas[0].toDataURL("Assets/img3.jpg"); // Correctly generate the data URL
+                console.log(dataURL); // Log the data URL to ensure it's correctly generated
+                canvas.parent().css("background-image", "url(" + dataURL + ")"); 
 
             canvas.css("background", "#ffe");
             $await(Jscex.Async.sleep(300));
